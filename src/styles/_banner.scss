@@ -1,0 +1,112 @@
+@import "_variables";
+@import "_mixins";
+
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  margin-bottom: 127px;
+  padding: 32px 12px 112px;
+  min-width: 320px;
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    & > * {
+      @include m-full-screen;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-block: 0;
+    max-width: 200px;
+    font-family: "Playfair Display", Helvetica, sans-serif;
+    color: $clr-gold;
+    @include m-set-font(24px, 900, 120%);
+  }
+
+  &__text {
+    margin-block: 0;
+    max-width: 200px;
+    color: $clr-white;
+    @include m-set-font(16px, 400, 120%);
+  }
+
+  &__link {
+    position: absolute;
+    inset: auto 12px -91px;
+    padding: 22px;
+    border-radius: 10px;
+    width: calc(100% - 24px);
+    text-align: center;
+    color: $clr-white;
+    @include m-set-font(16px, 700);
+    background-color: $clr-primary;
+    transition:
+      color 0.1s ease-in-out,
+      background-color 0.1s ease-in-out,
+      border-color 0.1s ease-in-out;
+
+    &:hover {
+      @include m-set-bg-color($clr-primary-light, $clr-primary-light);
+    }
+
+    &:focus-visible {
+      outline: none;
+      @include m-set-bg-color($clr-primary-shade, $clr-primary-light);
+    }
+
+    &:active {
+      @include m-set-bg-color($clr-primary-shade, $clr-primary-shade);
+    }
+
+    &:disabled {
+      color: $clr-gray;
+      @include m-set-bg-color($clr-gray-middle, $clr-gray-middle);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    margin-bottom: 35px;
+    padding-block: 152px;
+    padding-inline: 36px;
+
+    &__title {
+      max-width: 510px;
+      font-size: 60px;
+    }
+
+    &__text {
+      margin-bottom: 49px;
+      max-width: 510px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &__link {
+      position: initial;
+      align-self: flex-start;
+      padding-inline: 31.5px;
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    padding-block: 154px 150px;
+    padding-inline: 36px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .banner {
+    padding-inline: calc((100vw - 1280px) / 2);
+  }
+}

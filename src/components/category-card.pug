@@ -1,0 +1,21 @@
+article(class=`card ${className ? className : ""}`)
+  ul.list-reset.card__subcategories(aria-label=`Подкатегории раздела ${categoryName}`)
+    each text in categorySubcategories
+      li.card__subcategory
+        a.link-reset.card__subcategory-link(href="catalog.html")= text
+
+  h3.card__title= categoryName
+    a.link-reset.card__title-link(href="catalog.html" aria-label="В каталог")
+      include ../assets/img/arrow-right-circle.svg
+
+  .card__img
+    picture.card__picture
+      source(srcset=`../assets/img/category-${categoryImg}-1400px.webp` media="(min-width: 1400px)" type="image/webp")
+      source(srcset=`../assets/img/category-${categoryImg}-1024px.webp` media="(min-width: 1024px)" type="image/webp")
+      source(srcset=`../assets/img/category-${categoryImg}-768px.webp` media="(min-width: 768px)" type="image/webp")
+      source(srcset=`../assets/img/category-${categoryImg}.webp` type="image/webp")
+      img(src=`../assets/img/category-${categoryImg}-1400px.webp` alt="")
+
+  a.link-reset.card__link(href="catalog.html")
+    span.card__link-text В каталог
+    include ../assets/img/arrow-right-circle.svg

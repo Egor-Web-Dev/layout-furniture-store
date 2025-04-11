@@ -1,0 +1,54 @@
+header.header
+  .row-0.header__row-0.container
+    a.link-reset.row-0__link(href=`${logoLink}` aria-label="Главная страница")
+      include ../assets/img/logo.svg
+
+  .row-1.header__row-1.container
+    .row-1__info.info
+      <a class="link-reset phone row-1__phone" href="tel:+74958854547">
+        include ../assets/img/phone.svg
+        span +7 (495) 885-45-47
+      </a>
+      include ./header-navigation
+
+  .row-2.header__row-2.container
+    include ./header-navigation
+    .btns.row-2__btns
+      button.btn.user.btns__user(aria-label="Личный кабинет")
+        include ../assets/img/user.svg
+      button.btn.cart.btns__cart(aria-label="Корзина")
+        span.cart__count 0
+        include ../assets/img/cart.svg
+
+  .row-3.header__row-3.container
+    .row-3__info.info
+      <a class="link-reset phone row-1__phone" href="tel:+74958854547">
+        include ../assets/img/phone.svg
+        span +7 (495) 885-45-47
+      </a>
+    a.link-reset.row-3__link(href=`${logoLink}` aria-label="Главная страница")
+      include ../assets/img/logo.svg
+    nav.nav.row-3__nav
+      ul.list-reset.nav__list
+        each text in ["Каталог", "Магазины", "Шоу-рум", "Доставка и оплата", "Дисконт", "Контакты"]
+          li.nav__item
+            a.link-reset.nav__link(href=`${text === "Каталог" ? "catalog.html" : "#"}`)= text
+    .btns.row-3__btns
+      button.btn.user.btns__user(aria-label="Личный кабинет")
+        include ../assets/img/user.svg
+      button.btn.cart.btns__cart(aria-label="Корзина")
+        span.cart__count 0
+        include ../assets/img/cart.svg
+
+  .row-4.header__row-4.container
+    .search.row-4__search
+      input.search__input(placeholder="Я хочу купить..." aria-label="Поиск товаров")
+      include ../assets/img/search.svg
+      button.btn.submit.search__submit(aria-label="Искать")
+        include ../assets/img/arrow-right-circle-large.svg
+    .btns.row-4__btns
+      button.btn.user.btns__user(aria-label="Личный кабинет")
+        include ../assets/img/user.svg
+      button.btn.cart.btns__cart(aria-label="Корзина")
+        span.cart__count 0
+        include ../assets/img/cart.svg

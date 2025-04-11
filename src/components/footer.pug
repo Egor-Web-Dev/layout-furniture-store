@@ -1,0 +1,27 @@
+footer.footer
+  .footer__content.container
+    a.footer__link(href=`${logoLink}` aria-label="Главная страница")
+      include ../assets/img/logo.svg
+
+    ul.list-reset.footer__socials
+      each social in [{ name: "OK" }, { name: "VK" }]
+        li.social.footer__social
+          a.link-reset.social__link(href="#" aria-label=`Наша страница в ${social.name}`)
+            case social.name
+              when "OK"
+                include ../assets/img/social-ok.svg
+              when "VK"
+                include ../assets/img/vk.svg
+
+    nav.nav.footer__nav
+      each section in [{ title: "О нас", links: ["О компании", "Блог"] }, { title: "Услуги", links: ["Доставка", "Рассрочка и кредит", "Сборка и установка"] }, { title: "Связь с нами", links: ["Обратная связь", "Контакты"] },{ title: "Сотрудничество", links: ["Поставщикам", "Оптовикам", "Карьера"] }]
+        .section.nav__section
+          .section__title= section.title
+          ul.list-reset.menu.section__menu
+            each link in section.links
+              - var path = link === "Поставщикам" ? "cooperation.html" : "#"
+              li.section.menu__item
+                a.link-reset.menu__link(href= path)= link
+
+  .footer__copyright.container
+    .footer__copyright-text SDP® &nbsp; 2011-2021

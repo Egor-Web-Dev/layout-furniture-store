@@ -1,0 +1,5 @@
+.breadcrumbs.container
+  ul.list-reset.breadcrumbs__list
+    each data, index in breadcrumbLinks
+      li.breadcrumbs__item
+        a(class=`link-reset breadcrumbs__link${index === breadcrumbLinks.length - 1 ? " breadcrumbs__link--current" : ""}` href=`${data.link}`)= data.anchor

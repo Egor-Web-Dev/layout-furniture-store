@@ -1,0 +1,177 @@
+@import "_variables";
+@import "_mixins";
+
+.cooperation {
+  grid-template-columns: 1fr;
+  padding-block: 32px 49px;
+
+  &__title {
+    margin-bottom: 32px;
+    color: $clr-black;
+    @include m-set-font(24px, 400);
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+    color: $clr-black;
+    @include m-set-font(16px, 400, 131%);
+  }
+
+  &__text {
+    color: $clr-gray-shade;
+    @include m-set-font(14px, 400, 180%);
+  }
+
+  &__to-suppliers {
+    .to-suppliers__text {
+      margin-bottom: 32px;
+    }
+  }
+
+  .getting {
+    margin-bottom: 32px;
+    max-width: 624px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    &__item {
+      display: flex;
+
+      &::before {
+        content: "";
+        margin-right: 12px;
+        padding-right: 25px;
+        width: 25px;
+        height: 25px;
+      }
+
+      &:first-child::before {
+        background: url("../assets/img/network.svg") no-repeat;
+      }
+
+      &:nth-child(2)::before {
+        background: url("../assets/img/briefcase.svg") no-repeat;
+      }
+
+      &:last-child::before {
+        background: url("../assets/img/git-pull-request.svg") no-repeat;
+      }
+    }
+
+    &__text {
+      line-height: 150%;
+    }
+  }
+
+  .advantages {
+    margin-bottom: 32px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    &__opportunity {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+      line-height: 21px;
+      color: $clr-secondary;
+    }
+
+    &__descr {
+      line-height: 180%;
+    }
+
+    &__title {
+      font-size: 14px;
+    }
+  }
+
+  .guarantees {
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 9px;
+      padding-left: 18px;
+      list-style-type: numeric;
+    }
+
+    &__item {
+      padding-left: 8px;
+      font-weight: 600;
+      color: $clr-secondary;
+    }
+
+    &__text {
+      font-weight: 400;
+    }
+
+    &__period {
+      display: flex;
+      align-items: center;
+      padding-block: 22px;
+      font-size: 16px;
+      line-height: 150%;
+
+      &::before {
+        content: url("../assets/img/pencil-small.webp");
+        margin-right: 16px;
+        width: 36px;
+        height: 54px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cooperation {
+    &__title {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 136%;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    .advantages__title {
+      font-size: 24px;
+    }
+
+    .guarantees {
+      .guarantees__list {
+        gap: 15px;
+      }
+
+      &__period {
+        font-size: 24px;
+
+        &::before {
+          content: url("../assets/img/pencil.webp");
+          margin-right: 32px;
+          width: 77px;
+          height: 116px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cooperation {
+    &__content {
+      max-width: 843px;
+    }
+  }
+}

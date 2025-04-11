@@ -1,0 +1,263 @@
+@import "_variables";
+@import "_mixins";
+
+.contact-us {
+  padding-block: 35px 70px;
+
+  &__data {
+    grid-column: 1 / 7;
+  }
+
+  &__title {
+    margin-block: 0 8px;
+    @include m-set-font(24px, 400);
+  }
+
+  &__text {
+    color: $clr-gray-shade;
+    @include m-set-font(14px, 400, 19px);
+  }
+
+  &__form {
+    margin-top: 16px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__label {
+      position: relative;
+      width: 100%;
+
+      &--error {
+        position: absolute;
+        bottom: calc(100%);
+        left: 18px;
+        color: $clr-red-input;
+        @include m-set-font(12px, 400, 16px);
+      }
+    }
+
+    &__input {
+      padding: 6px 17px;
+      width: 100%;
+      border: 1px solid $clr-gray-light;
+      border-radius: 10px;
+      @include m-set-font(16px, 400, 40px);
+      background-color: $clr-gray-light;
+      transition:
+        border-color 0.1s ease-in-out,
+        background-color 0.1s ease-in-out;
+
+      &:placeholder-shown + .search__icon > path {
+        fill: $clr-gray;
+      }
+
+      &::placeholder {
+        color: $clr-gray;
+      }
+
+      &:hover {
+        @include m-set-bg-color($clr-gray-middle, $clr-gray-middle);
+      }
+
+      &:focus-visible {
+        outline: none;
+        @include m-set-bg-color($clr-primary, $clr-pink-light);
+      }
+
+      &--invalid.form__input {
+        border-color: $clr-red-input;
+      }
+
+      &--valid.form__input {
+        border-color: $clr-green-input;
+      }
+    }
+
+    &__btn {
+      align-self: flex-start;
+      padding: 19px 35px;
+      border-radius: 10px;
+      color: $clr-white;
+      @include m-set-font(16px, 600);
+      background-color: $clr-primary;
+      transition:
+        color 0.1s ease-in-out,
+        background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
+
+      &:hover {
+        @include m-set-bg-color($clr-primary-light, $clr-primary-light);
+      }
+
+      &:focus-visible {
+        outline: none;
+        @include m-set-bg-color($clr-primary-shade, $clr-primary-light);
+      }
+
+      &:active {
+        @include m-set-bg-color($clr-primary-shade, $clr-primary-shade);
+      }
+
+      &:disabled {
+        color: $clr-gray;
+        @include m-set-bg-color($clr-gray-middle, $clr-gray-middle);
+      }
+    }
+
+    &__checkbox {
+      margin-top: -17px;
+    }
+
+    .checkbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+
+      &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        & + svg {
+          width: 14px;
+          height: 14px;
+          border-radius: 2px;
+          transition:
+            outline 0.1s ease-in-out,
+            background-color 0.1s ease-in-out;
+
+          & rect,
+          & path {
+            transition:
+              fill 0.1s ease-in-out,
+              stroke 0.1s ease-in-out;
+          }
+        }
+
+        &:hover + svg {
+          background-color: $clr-pink-violet;
+        }
+
+        &:not(:checked) + svg {
+          border: 1px solid $clr-gray;
+        }
+
+        &:not(:checked) + svg > * {
+          fill: transparent;
+          stroke: transparent;
+        }
+
+        &:focus-visible + svg {
+          background-color: $clr-pink-violet;
+        }
+
+        &.form__input--invalid + svg {
+          outline-color: $clr-red-input;
+        }
+      }
+
+      &__text {
+        @include m-set-font(12px, 400, 16px);
+        user-select: none;
+      }
+
+      &__link {
+        color: $clr-primary;
+        text-decoration: underline;
+        transition:
+          outline 0.1s ease-in-out,
+          background-color 0.1s ease-in-out;
+
+        &:hover {
+          color: $clr-primary-light;
+        }
+
+        &:focus-visible {
+          color: $clr-primary-shade;
+          background-color: $clr-pink-violet;
+          outline: 2px solid $clr-pink-violet;
+          outline-offset: 0;
+        }
+
+        &:active {
+          color: $clr-primary-shade;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+  }
+
+  &__picture {
+    @include m-full-screen;
+
+    & > * {
+      @include m-full-screen;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-us {
+    &__data {
+      grid-column: 1 / 5;
+    }
+
+    &__title {
+      margin-bottom: 9px;
+      font-size: 32px;
+    }
+
+    .form {
+      &__checkbox {
+        margin-top: -18px;
+      }
+
+      .checkbox {
+        gap: 8px;
+
+        &__text {
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+    }
+
+    &__img {
+      display: block;
+      grid-column: 5 / 7;
+      padding-top: 13px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-us {
+    &__img {
+      grid-column: 5 / 10;
+      padding-top: 77px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .contact-us {
+    &__data {
+      grid-column: 1 / 7;
+    }
+
+    &__img {
+      grid-column: 7 / 13;
+      padding-top: 25px;
+    }
+  }
+}

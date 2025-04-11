@@ -1,0 +1,15 @@
+extends ./layout
+
+prepend head
+  - var title = "Каталог | Интернет-магазин SitDownPls"
+  - var pageName = "catalog"
+  - var styles = ["catalog.scss"]
+  - var scripts = ["catalog-pagination.js"]
+
+prepend header
+  - var logoLink = "."
+  - var breadcrumbLinks = [{ anchor: "Главная", link: "index.html" }, { anchor: "Каталог", link: "catalog.html" }, { anchor: "Диваны", link: "catalog.html" }, { anchor: "Прямые диваны", link: "catalog.html" }]
+
+block main
+  include ../components/breadcrumbs
+  include ../components/catalog

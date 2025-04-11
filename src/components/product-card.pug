@@ -1,0 +1,14 @@
+div(class=`card ${className ? className : ""}`)
+  .rating.card__rating
+    include ../assets/img/star.svg
+    span.rating__text= productRating
+
+  picture.card__img
+    source(srcset=`../assets/img/${productImg}-large.webp` media="(min-width: 768px)" type="image/webp")
+    source(srcset=`../assets/img/${productImg}.webp` type="image/webp")
+    img(src=`../assets/img/${productImg}-large.webp` loading="lazy" alt="")
+
+  h4.card__title= productName
+    span.card__furniture-model= productModel
+  span.card__price= productPrice
+  a.link-reset.card__link(href="product.html") Купить

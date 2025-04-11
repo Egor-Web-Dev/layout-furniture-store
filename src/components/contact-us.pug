@@ -1,0 +1,23 @@
+section.contact-us.container
+  .contact-us__data
+    h2.contact-us__title Мы&nbsp;всегда вам рады!
+    span.contact-us__text Безусловно, новая модель организационной деятельности в&nbsp;значительной степени обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
+    form.form.contact-us__form.js-contact-us-form
+      label.form__label
+        input#name.form__input(type="text" placeholder="Как вас зовут?" aria-label="Введите ваше имя")
+      label.form__label
+        input#tel.form__input(type="tel" placeholder="Ваш телефон" aria-label="Введите ваш телефон")
+      label.form__label
+        input#email.form__input(type="email" placeholder="Ваш e-mail" aria-label="Введите ваш e-mail")
+      button.btn.form__btn(type="submit") Отправить
+      label.checkbox.form__checkbox
+        input#checkbox.checkbox__input(type="checkbox" checked)
+        include ../assets/img/checkbox.svg
+        span.checkbox__text Принимаю #[a.link-reset.checkbox__link(href="#") пользовательское соглашение]
+
+  .contact-us__img
+    picture.card__picture
+      source(srcset=`../assets/img/contact-us-1400px.webp` media="(min-width: 1400px)" type="image/webp")
+      source(srcset=`../assets/img/contact-us-1024px.webp` media="(min-width: 1024px)" type="image/webp")
+      source(srcset=`../assets/img/contact-us-768px.webp` media="(min-width: 768px)" type="image/webp")
+      img(src=`../assets/img/contact-us-1400px.webp` alt="")

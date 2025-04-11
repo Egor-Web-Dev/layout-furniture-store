@@ -1,0 +1,19 @@
+extends ./layout
+
+prepend head
+  - var title = "Главная страница | Интернет-магазин SitDownPls"
+  - var pageName = "main"
+  - var styles = ["index.scss"]
+  - var scripts = ["offers-slider.js", "useful-slider.js", "validation.js"]
+
+prepend header
+  - var logoLink = "#"
+
+block main
+  include ../components/hero
+  include ../components/offers
+  include ../components/rated
+  include ../components/banner
+  include ../components/categories
+  include ../components/useful
+  include ../components/contact-us

@@ -1,0 +1,13 @@
+section.hero
+  h1.hero__title.visually-hidden Интернет-магазин SitDownPls
+  .hero__slider
+    div.container
+      picture.slide__img
+        source(srcset=`../assets/img/slide-1-1400px.webp` media="(min-width: 1400px)" type="image/webp")
+        source(srcset=`../assets/img/slide-1-1024px.webp` media="(min-width: 1024px)" type="image/webp")
+        source(srcset=`../assets/img/slide-1-768px.webp` media="(min-width: 768px)" type="image/webp")
+        source(srcset=`../assets/img/slide-1.webp` type="image/webp")
+        img(src=`../assets/img/slide-1-1400px.webp` loading="lazy" alt="Слайд")
+      h5.slide__title Скидка&nbsp;15% на&nbsp;первую покупку
+      a.link-reset.slide__link(href="catalog.html") Получить!
+

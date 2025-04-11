@@ -1,0 +1,17 @@
+section.similar.container
+  h2.similar__title Похожие товары
+  .similar__slider.swiper.js-similar-swiper
+    .swiper-wrapper
+      each data in [{ img: "product-16", name: "Диван велюровый “R-85”", price: "34 990 руб", rating: "4,5" }, { img: "product-11", name: "Диван флоковый “H-58”", price: "23 990 руб", rating: "4,6" }, { img: "product-17", name: "Диван велюровый “S-44”", price: "19 990 руб", rating: "4,5" }, { img: "product-7", name: "Диван шиниловый “V-43”", price: "19 990 руб", rating: "4,8" }, { img: "product-12", name: "Диван из кожзама “R-43”", price: "33 990 руб", rating: "4,6" }, { img: "product-13", name: "Диван из шинила “С-42”", price: "18 990 руб", rating: "4,6" }]
+        .swiper-slide.similar__slide
+          - var className = "similar__card"
+          - var productImg = data.img
+          - var productName = data.name
+          - var productPrice = data.price
+          - var productRating = data.rating
+          include ./product-card
+
+    .swiper-button-prev
+      include ../assets/img/arrow-right-circle-large.svg
+    .swiper-button-next
+      include ../assets/img/arrow-right-circle-large.svg

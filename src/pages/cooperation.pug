@@ -1,0 +1,15 @@
+extends ./layout
+
+prepend head
+  - var title = "Сотрудничество | Интернет-магазин SitDownPls"
+  - var pageName = "cooperation"
+  - var styles = ["cooperation.scss"]
+  - var scripts = []
+
+prepend header
+  - var logoLink = "."
+  - var breadcrumbLinks = [{ anchor: "Главная", link: "index.html" }, { anchor: "Сотрудничество", link: "#" }]
+
+block main
+  include ../components/breadcrumbs
+  include ../components/cooperation

@@ -1,0 +1,30 @@
+head
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible" content="IE=edge")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  meta(name="keywords" content="Мебель, диваны, кресла, интерьер")
+  meta(name="description" content="Магазин качественной мебели")
+
+  title= title
+  link(rel="icon" href="../assets/img/favicon.svg" type="image/x-icon")
+  link(rel="preload" href="../assets/fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+  link(rel="preload" href="../assets/fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+  link(rel="preload" href="../assets/fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous")
+
+  link(rel="stylesheet" href="../styles/normalize.css")
+
+  if pageName === "main" || pageName === "product"
+    link(rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://unpkg.com/swiper/swiper-bundle.css")
+    link(rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    script(src="https://unpkg.com/swiper/swiper-bundle.js" defer)
+    script(src="https://unpkg.com/swiper/swiper-bundle.min.js" defer)
+    script(src="https://unpkg.com/just-validate@4.2.0/dist/just-validate.production.min.js" defer)
+
+  link(rel="stylesheet", href="../styles/common.scss")
+
+  each style in styles
+    link(rel="stylesheet" href=`../styles/${style}`)
+
+  each script in scripts
+    script(src=`../js/${script}` type="module")
+  title #{title}

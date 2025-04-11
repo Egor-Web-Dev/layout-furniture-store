@@ -1,0 +1,7 @@
+- var navigationItems = ["О компании", "Гарантии и возврат", "Корпоративным клиентам", "Дизайн-решение"]
+
+nav.menu.header__nav-menu
+  ul.list-reset.menu__list
+    each text in navigationItems
+      li.menu__item
+        a.link-reset.menu__link(href="#")= text
